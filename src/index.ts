@@ -108,7 +108,7 @@ async function setLastCheckTimestamp(kv: KVNamespace, timestamp: number): Promis
 // Format hit for notification
 function formatHit(hit: HNHit): { title: string; message: string; url: string } {
 	const title = hit.title || hit.story_title || "HN Comment";
-	const url = hit.url || hit.story_url || `https://news.ycombinator.com/item?id=${hit.objectID}`;
+	const url = `https://news.ycombinator.com/item?id=${hit.objectID}`;
 
 	let message = `by ${hit.author}`;
 	if (hit.comment_text) {
