@@ -22,5 +22,10 @@
 
 	// ntfy.sh topic for notifications (set via wrangler secret for privacy)
 	// Run: wrangler secret put NTFY_TOPIC
-	"vars": {}
+	"vars": {},
+
+	// Workers AI binding for relevance filtering
+	"ai": {
+		"binding": "AI"
+	}
 }

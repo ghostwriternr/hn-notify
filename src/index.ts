@@ -2,6 +2,12 @@
 interface Env {
 	HN_KV: KVNamespace;
 	NTFY_TOPIC: string;
+	AI: Ai;
+}
+
+interface KeywordConfig {
+	keyword: string;
+	context?: string;
 }
 
 interface HNHit {
@@ -22,6 +28,9 @@ interface HNSearchResponse {
 // KV Keys
 const KEYWORDS_KEY = "keywords";
 const LAST_CHECK_KEY = "last_check_timestamp";
+
+// AI Configuration
+const RELEVANCE_THRESHOLD = 0.5; // Minimum score to send notification (0-1)
 
 // HN Algolia API
 const HN_API_BASE = "https://hn.algolia.com/api/v1";
@@ -60,13 +69,20 @@ async function sendNotification(topic: string, title: string, message: string, u
 }
 
 // Keywords management
-async function getKeywords(kv: KVNamespace): Promise<string[]> {
+async function getKeywords(kv: KVNamespace): Promise<KeywordConfig[]> {
 	const data = await kv.get(KEYWORDS_KEY);
 	if (!data) return [];
-	return JSON.parse(data);
+
+	const parsed = JSON.parse(data);
+
+	if (Array.isArray(parsed) && parsed.length > 0 && typeof parsed[0] === "string") {
+		return parsed.map((keyword: string) => ({ keyword }));
+	}
+
+	return parsed;
 }
 
-async function addKeyword(kv: KVNamespace, keyword: string): Promise<string[]> {
+async function addKeyword(kv: KVNamespace, keyword: string, context?: string): Promise<KeywordConfig[]> {
 	const keywords = await getKeywords(kv);
 	const normalized = keyword.trim().toLowerCase();
 
@@ -74,19 +90,23 @@ async function addKeyword(kv: KVNamespace, keyword: string): Promise<string[]> {
 		throw new Error("Keyword cannot be empty");
 	}
 
-	if (keywords.includes(normalized)) {
-		return keywords;
+	const trimmedContext = context?.trim() || undefined;
+
+	const existing = keywords.find((k) => k.keyword === normalized);
+	if (existing) {
+		existing.context = trimmedContext;
+	} else {
+		keywords.push({ keyword: normalized, context: trimmedContext });
 	}
 
-	keywords.push(normalized);
 	await kv.put(KEYWORDS_KEY, JSON.stringify(keywords));
 	return keywords;
 }
 
-async function removeKeyword(kv: KVNamespace, keyword: string): Promise<string[]> {
+async function removeKeyword(kv: KVNamespace, keyword: string): Promise<KeywordConfig[]> {
 	const keywords = await getKeywords(kv);
 	const normalized = keyword.trim().toLowerCase();
-	const filtered = keywords.filter((k) => k !== normalized);
+	const filtered = keywords.filter((k) => k.keyword !== normalized);
 	await kv.put(KEYWORDS_KEY, JSON.stringify(filtered));
 	return filtered;
 }
@@ -105,26 +125,75 @@ async function setLastCheckTimestamp(kv: KVNamespace, timestamp: number): Promis
 	await kv.put(LAST_CHECK_KEY, timestamp.toString());
 }
 
-// Format hit for notification
-function formatHit(hit: HNHit): { title: string; message: string; url: string } {
-	const title = hit.title || hit.story_title || "HN Comment";
-	const url = `https://news.ycombinator.com/item?id=${hit.objectID}`;
+async function checkRelevance(ai: Ai, context: string, hit: HNHit): Promise<number> {
+	const content = [hit.title, hit.story_title, hit.comment_text?.replace(/<[^>]*>/g, " ")]
+		.filter(Boolean)
+		.join(" ")
+		.substring(0, 500);
 
-	let message = `by ${hit.author}`;
-	if (hit.comment_text) {
-		// Strip HTML and truncate
-		const text = hit.comment_text.replace(/<[^>]*>/g, " ").substring(0, 200);
-		message = `${text}...`;
+	if (!content.trim()) {
+		return 0;
 	}
 
-	return { title, message, url };
+	const result = await ai.run("@cf/baai/bge-reranker-base", {
+		query: context,
+		contexts: [{ text: content }],
+	});
+
+	return result.response?.[0]?.score ?? 0;
 }
 
-// Scheduled handler - runs every 15 minutes
-async function handleScheduled(env: Env): Promise<void> {
-	const keywords = await getKeywords(env.HN_KV);
+interface MatchedHit {
+	keyword: string;
+	hit: HNHit;
+}
 
-	if (keywords.length === 0) {
+function formatBatchNotification(matches: MatchedHit[]): { title: string; body: string } {
+	if (matches.length === 0) {
+		return { title: "HN Alert", body: "No matches" };
+	}
+
+	if (matches.length === 1) {
+		const { keyword, hit } = matches[0];
+		const itemTitle = hit.title || hit.story_title || "Comment";
+		return {
+			title: `[${keyword}] ${itemTitle}`,
+			body: formatHitBody(hit),
+		};
+	}
+
+	const keywordCounts = new Map<string, number>();
+	for (const { keyword } of matches) {
+		keywordCounts.set(keyword, (keywordCounts.get(keyword) || 0) + 1);
+	}
+	const summaryParts = Array.from(keywordCounts.entries()).map(([kw, count]) => `${kw}(${count})`);
+
+	const title = `HN Alert: ${matches.length} matches`;
+	const lines: string[] = [summaryParts.join(", "), ""];
+
+	for (const { keyword, hit } of matches.slice(0, 10)) {
+		const itemTitle = hit.title || hit.story_title || "Comment";
+		lines.push(`• [${keyword}] ${itemTitle.substring(0, 60)}`);
+	}
+
+	if (matches.length > 10) {
+		lines.push(`... and ${matches.length - 10} more`);
+	}
+
+	return { title, body: lines.join("\n") };
+}
+
+function formatHitBody(hit: HNHit): string {
+	if (hit.comment_text) {
+		return hit.comment_text.replace(/<[^>]*>/g, " ").substring(0, 200) + "...";
+	}
+	return `by ${hit.author}`;
+}
+
+async function handleScheduled(env: Env): Promise<void> {
+	const keywordConfigs = await getKeywords(env.HN_KV);
+
+	if (keywordConfigs.length === 0) {
 		console.log("No keywords configured, skipping");
 		return;
 	}
@@ -137,36 +206,51 @@ async function handleScheduled(env: Env): Promise<void> {
 	const lastCheck = await getLastCheckTimestamp(env.HN_KV);
 	const now = Math.floor(Date.now() / 1000);
 
-	console.log(`Checking ${keywords.length} keywords since ${new Date(lastCheck * 1000).toISOString()}`);
+	console.log(`Checking ${keywordConfigs.length} keywords since ${new Date(lastCheck * 1000).toISOString()}`);
 
 	const seenIds = new Set<string>();
+	const matches: MatchedHit[] = [];
+	let filteredCount = 0;
 
-	for (const keyword of keywords) {
+	for (const { keyword, context } of keywordConfigs) {
 		try {
 			const hits = await searchHN(keyword, lastCheck);
 
 			for (const hit of hits) {
-				// Dedupe across keywords
 				if (seenIds.has(hit.objectID)) continue;
 				seenIds.add(hit.objectID);
 
-				const { title, message, url } = formatHit(hit);
-				await sendNotification(
-					env.NTFY_TOPIC,
-					`[${keyword}] ${title}`,
-					message,
-					url
-				);
+				if (context) {
+					try {
+						const score = await checkRelevance(env.AI, context, hit);
+						if (score < RELEVANCE_THRESHOLD) {
+							filteredCount++;
+							console.log(`Filtered [${keyword}] (score=${score.toFixed(2)}): ${hit.title || hit.story_title}`);
+							continue;
+						}
+						console.log(`Passed [${keyword}] (score=${score.toFixed(2)}): ${hit.title || hit.story_title}`);
+					} catch (aiError) {
+						console.error("AI filtering error, including in batch anyway:", aiError);
+					}
+				}
 
-				console.log(`Notified: ${title}`);
+				matches.push({ keyword, hit });
+				console.log(`Matched [${keyword}]: ${hit.title || hit.story_title}`);
 			}
 		} catch (error) {
 			console.error(`Error searching for "${keyword}":`, error);
 		}
 	}
 
+	if (matches.length > 0) {
+		const { title, body } = formatBatchNotification(matches);
+		const firstHitUrl = `https://news.ycombinator.com/item?id=${matches[0].hit.objectID}`;
+		await sendNotification(env.NTFY_TOPIC, title, body, firstHitUrl);
+		console.log(`Sent batch notification with ${matches.length} matches`);
+	}
+
 	await setLastCheckTimestamp(env.HN_KV, now);
-	console.log(`Done. Found ${seenIds.size} new items.`);
+	console.log(`Done. Found ${seenIds.size} items, matched ${matches.length}, filtered ${filteredCount}.`);
 }
 
 // HTTP handler for keyword management API
@@ -186,16 +270,16 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
 	}
 
 	try {
-		// GET /keywords - list all keywords
+		// GET /keywords - list all keywords with their contexts
 		if (path === "/keywords" && request.method === "GET") {
 			const keywords = await getKeywords(env.HN_KV);
 			return Response.json({ keywords }, { headers: corsHeaders });
 		}
 
-		// POST /keywords - add a keyword
+		// POST /keywords - add a keyword (context is optional for AI filtering)
 		if (path === "/keywords" && request.method === "POST") {
-			const body = await request.json<{ keyword: string }>();
-			const keywords = await addKeyword(env.HN_KV, body.keyword);
+			const body = await request.json<{ keyword: string; context?: string }>();
+			const keywords = await addKeyword(env.HN_KV, body.keyword, body.context);
 			return Response.json({ keywords }, { headers: corsHeaders });
 		}
 
@@ -215,6 +299,7 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
 					keywords_count: keywords.length,
 					last_check: new Date(lastCheck * 1000).toISOString(),
 					ntfy_configured: !!env.NTFY_TOPIC,
+					relevance_threshold: RELEVANCE_THRESHOLD,
 				},
 				{ headers: corsHeaders }
 			);
