@@ -28,9 +28,11 @@ interface HNSearchResponse {
 // KV Keys
 const KEYWORDS_KEY = "keywords";
 const LAST_CHECK_KEY = "last_check_timestamp";
+const NOTIFIED_PREFIX = "notified:";
+const NOTIFIED_TTL_SECONDS = 24 * 60 * 60;
 
 // AI Configuration
-const RELEVANCE_THRESHOLD = 0.5; // Minimum score to send notification (0-1)
+const RELEVANCE_THRESHOLD = 0.005; // Minimum score to send notification (0-1), tuned via reranker testing
 
 // HN Algolia API
 const HN_API_BASE = "https://hn.algolia.com/api/v1";
@@ -220,6 +222,9 @@ async function handleScheduled(env: Env): Promise<void> {
 				if (seenIds.has(hit.objectID)) continue;
 				seenIds.add(hit.objectID);
 
+				const alreadyNotified = await env.HN_KV.get(`${NOTIFIED_PREFIX}${hit.objectID}`);
+				if (alreadyNotified) continue;
+
 				if (context) {
 					try {
 						const score = await checkRelevance(env.AI, context, hit);
@@ -247,6 +252,12 @@ async function handleScheduled(env: Env): Promise<void> {
 		const firstHitUrl = `https://news.ycombinator.com/item?id=${matches[0].hit.objectID}`;
 		await sendNotification(env.NTFY_TOPIC, title, body, firstHitUrl);
 		console.log(`Sent batch notification with ${matches.length} matches`);
+
+		await Promise.all(
+			matches.map((m) =>
+				env.HN_KV.put(`${NOTIFIED_PREFIX}${m.hit.objectID}`, '1', { expirationTtl: NOTIFIED_TTL_SECONDS })
+			)
+		);
 	}
 
 	await setLastCheckTimestamp(env.HN_KV, now);
