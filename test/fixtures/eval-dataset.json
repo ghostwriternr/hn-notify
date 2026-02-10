@@ -1,0 +1,455 @@
+[
+	{
+		"objectID": "40284968",
+		"title": "Open-source secure sandboxes for AI code execution",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "ai code execution",
+		"context_string": "AI agent code execution platforms, LLM sandbox environments, running AI-generated code in cloud sandboxes",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "44558809",
+		"title": "Sandboxes for AI Code Execution",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "ai code execution",
+		"context_string": "AI agent code execution platforms, LLM sandbox environments, running AI-generated code in cloud sandboxes",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "46952493",
+		"title": "",
+		"story_title": "America has a tungsten problem",
+		"comment_text": "&gt;Now that China has become more adversarial<p>I think it&#x27;s the other way around here. I say that as China&#x27;s policy has primarily focused on self-reliance to the degree that it&#x27;s overshadowed the west in several sectors with the exception of a few (Tech&#x2F;AI, Finance, Bio) and given their persistence to close the gap I&#x27;d say we aren&#x27;t too far from being eclipsed entirely.<p>One just has to look at the economics of it all and come to the conclusion that many have already arrived at...",
+		"context_keyword": "ai code execution",
+		"context_string": "AI agent code execution platforms, LLM sandbox environments, running AI-generated code in cloud sandboxes",
+		"expected_relevant": false,
+		"match_reason": "tungsten policy, not AI sandbox"
+	},
+	{
+		"objectID": "46932045",
+		"title": "",
+		"story_title": "ArtisanForge: Learn Laravel through a gamified RPG adventure – 100% free",
+		"comment_text": "Hey HN,<p><pre><code>  I built ArtisanForge, a free platform to learn PHP and Laravel through a medieval-fantasy RPG. Instead of traditional tutorials, you progress through kingdoms, solve coding exercises in a browser editor, earn  \n  XP, join guilds, and fight boss battles.                                                                                                                                                                          \n                                                                                                                                                                                                                    \n  Tech stack: Laravel 12, Livewire 3, Tailwind CSS, Alpine.js. Code execution runs sandboxed via php-wasm in the browser.\n                                                          \n  What&#x27;s in there:\n  - 12 courses across 11 kingdoms (PHP basics to deployment)\n  - 100+ interactive exercises with real-time code validation using AST analysis\n  - AI companion (Pip the Owlox) that uses Socratic method – never gives direct answers\n  - Full gamification: XP, levels, streaks, achievements, guilds, leaderboard\n  - Multilingual (EN&#x2F;FR&#x2F;NL)\n\n  The idea came from seeing too many beginners drop off traditional courses. Wrapping concepts in quests and progression mechanics keeps motivation high without dumbing down the content.\n\n  Everything is free, no paywall, no premium tier. Feedback welcome – especially from Laravel devs and educators.</code></pre>",
+		"context_keyword": "ai code execution",
+		"context_string": "AI agent code execution platforms, LLM sandbox environments, running AI-generated code in cloud sandboxes",
+		"expected_relevant": false,
+		"match_reason": "Laravel gamified RPG, not AI sandbox"
+	},
+	{
+		"objectID": "43653777",
+		"title": "Cloudflare Containers coming in June 2025",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "cloudflare containers",
+		"context_string": "Cloudflare Containers for deploying AI agents, running ChatGPT agents, AI app hosting, and sandboxed code execution on Cloudflare Workers runtime",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "44916639",
+		"title": "Show HN: Run Your Own ChatGPT Agent on Cloudflare Containers",
+		"story_title": "",
+		"comment_text": "Hi HN!<p>I was disappointed when the ChatGPT Agent announcement came with the note that there&#x27;d be limited usages available for something that&#x27;s architecturally simple:<p>&gt; Pro users have 400 messages per month, while other paid users get 40 messages monthly, with additional usage available via flexible credit-based options.<p>So assembled this with Cloudflare&#x27;s recent Containers API. Here&#x27;s a link to the tweet we posted launching it:<p><a href=\"https:&#x2F;&#x2F;x.com&#x2F;getlsd&#x2F;status&#x2F;1956441045119672710\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;getlsd&#x2F;status&#x2F;1956441045119672710</a><p>Feel free to fork or star and make funny things happen :)",
+		"context_keyword": "cloudflare containers",
+		"context_string": "Cloudflare Containers for deploying AI agents, running ChatGPT agents, AI app hosting, and sandboxed code execution on Cloudflare Workers runtime",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "46483906",
+		"title": "Show HN: Open-source alternative to Cloudflare's Sandbox SDK",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "cloudflare sandbox",
+		"context_string": "Cloudflare Workers sandbox for AI code execution, Cloudflare containers for running untrusted code",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "45614952",
+		"title": "",
+		"story_title": "Cloudflare Sandbox SDK",
+		"comment_text": "I think you can absolutely compare them and there is no added flexibility, in fact there is <i>less</i> flexibility. There is added convenience though.<p>For the huge factor in price difference you can keep spare spot VMs on GCP idle and warm all the time and still be an order of magnitude cheaper. You have more features and flexibility with these. You can also discard them at will, they are not charged per month. Pricing granularity in GCP is per second (with 1min minimum) and you can fire up firecracker VMs within milliseconds as another commenter pointed out.<p>Cloudflare Sandbox have less functionality at a significantly increased price. The tradeoff is simplicity because they are more focused for a specific use case for which they don&#x27;t need additional configuration or tooling. The downside is that they can&#x27;t do everything a proper VM can do.<p>It&#x27;s a fair tradeoff but I argue the price difference is very much out of balance. But then again it seems to be a feature primarily going after AI companies and there is infinite VC money to burn at the moment.",
+		"context_keyword": "cloudflare sandbox",
+		"context_string": "Cloudflare Workers sandbox for AI code execution, Cloudflare containers for running untrusted code",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "35312609",
+		"title": "ChatGPT and Code Interpreter = Magic",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "code interpreter",
+		"context_string": "AI and LLM code interpreter for executing generated code, ChatGPT Code Interpreter, Claude Artifacts code execution, AI agent tool use",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "40237652",
+		"title": "Open-source SDK for adding custom code interpreters to AI apps",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "code interpreter",
+		"context_string": "AI and LLM code interpreter for executing generated code, ChatGPT Code Interpreter, Claude Artifacts code execution, AI agent tool use",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "46958118",
+		"title": "",
+		"story_title": "Monty: A minimal, secure Python interpreter written in Rust for use by AI",
+		"comment_text": "Nutika uses CPython as fallback. From the Limitations section:<p><pre><code>    &gt; Standalone binaries built using the --standalone command line option include an embedded CPython interpreter to handle aspects of the language that are not determined when the program is compiled and must be interpreted at runtime, such as duck typing, exception handling, and dynamic code execution (the eval function and exec function or statement), along with those Python and native libraries that are needed for execution, leading to rather large file sizes.</code></pre>",
+		"context_keyword": "code interpreter",
+		"context_string": "AI and LLM code interpreter for executing generated code, ChatGPT Code Interpreter, Claude Artifacts code execution, AI agent tool use",
+		"expected_relevant": false,
+		"match_reason": "Python interpreter in Rust, not AI"
+	},
+	{
+		"objectID": "46944213",
+		"title": "",
+		"story_title": "Ask HN: What are you working on? (February 2026)",
+		"comment_text": "I&#x27;m still plugging away on my PostScript interpreter. Right now I&#x27;m working on the clip and eoclip operators which has turned out to be much more complex than I expected. Mostly because I am not using any 3rd party libraries nor any AI generated code.<p>On the house front I&#x27;m just about to install an IKEA kitchen.",
+		"context_keyword": "code interpreter",
+		"context_string": "AI and LLM code interpreter for executing generated code, ChatGPT Code Interpreter, Claude Artifacts code execution, AI agent tool use",
+		"expected_relevant": false,
+		"match_reason": "PostScript interpreter, not AI"
+	},
+	{
+		"objectID": "46946565",
+		"title": "",
+		"story_title": "UEFI Bindings for JavaScript",
+		"comment_text": "Why is it a new surface?  Either you can run UEFI code, or you can&#x27;t.  Attacking the JS interpreter itself is unrealistic IMHO, it&#x27;s the poorly written JavaScript running on top of this that might open new surfaces of attack.  But other UEFI code is mostly written in C or C++, so let&#x27;s call that a wash?",
+		"context_keyword": "code interpreter",
+		"context_string": "AI and LLM code interpreter for executing generated code, ChatGPT Code Interpreter, Claude Artifacts code execution, AI agent tool use",
+		"expected_relevant": false,
+		"match_reason": "UEFI JavaScript interpreter, not AI"
+	},
+	{
+		"objectID": "39616709",
+		"title": "Show HN: Daytona – Open-source dev env manager from a 15-year journey",
+		"story_title": "",
+		"comment_text": "Hey HN,<p>I&#x27;m Ivan Burazin, and for the past 15 years, I have been on a mission to streamline software development environments. Today, I&#x27;m excited to share the culmination of that journey: Daytona, an open-source Development Environment Manager designed to finally solve the issue of setting up dev environments, whether local or remote.<p>My journey in cloud development began in 2009 when my cofounder and I we launched the first (or at least one of) commercial Cloud IDEs, Codeanywhere. We developed everything in-house: the IDE, the orchestrator, and more. We garnered interest from over 2.5 million developers, and although it makes sense now, then we were ahead of our time.<p>Fast forward to today and remote development is commonplace, but the complexity of setting up environments has grown by a magnitude.<p>This is where Daytona comes in.<p>- What is Daytona?<p>Daytona is an open source, single-binary Development Environment Manager that lets you set up your development environment anywhere – local, remote, cloud – with a single command: ‘daytona create.’ It&#x27;s free, flexible, and ready to use.<p>- Why Daytona?<p>*Simplicity*: Set up your dev environment with a single command. The only thing you need to need it to point to a repo and a target and Daytona automagicly does the rest.<p>*Flexibility*: Works on any machine, with any infrastructure.<p>*Open Source*: Fully transparent and community-driven.<p>- Getting Started:<p>We&#x27;ve made it super easy to try Daytona:<p>1. Download the single binary.\n2. Run it on your machine – no signups, no emails, just straight to business.<p>We&#x27;re excited to see how Daytona can streamline your development workflow. Try it out, push its limits, and let us know your thoughts, questions, and feedback right here.<p>GitHub: *<a href=\"https:&#x2F;&#x2F;github.com&#x2F;daytonaio&#x2F;daytona\\\">https:&#x2F;&#x2F;github.com&#x2F;daytonaio&#x2F;daytona\\</a>*<p>I&#x27;ll be around to discuss and answer any questions you have. Looking forward to ur feedback regardless.<p>Ivan Burazin\nFounder, Daytona<p>P.S.: For those who love the backstory and the technical journey, I&#x27;ve poured it all into a thread you can read here:<p><a href=\"https:&#x2F;&#x2F;x.com&#x2F;ivanburazin&#x2F;status&#x2F;1765392906054197674?s=20\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;ivanburazin&#x2F;status&#x2F;1765392906054197674?s=20</a>",
+		"context_keyword": "daytona",
+		"context_string": "Daytona.io cloud development environment manager, standardized dev environments, devcontainer orchestration, AI sandbox for code execution",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "42587042",
+		"title": "",
+		"story_title": "Developing inside a virtual machine",
+		"comment_text": "An alternative approach we&#x27;re working on is Daytona (<a href=\"https:&#x2F;&#x2F;github.com&#x2F;daytonaio&#x2F;daytona\">https:&#x2F;&#x2F;github.com&#x2F;daytonaio&#x2F;daytona</a>) - it orchestrates dev environments on your infrastructure or even on your local machine. Oh, and it is Apache 2.0. The interesting bit is how it handles any IDE integration and various providers for running your dev envs on.<p>Disclosure: I work on this project",
+		"context_keyword": "daytona",
+		"context_string": "Daytona.io cloud development environment manager, standardized dev environments, devcontainer orchestration, AI sandbox for code execution",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "46738730",
+		"title": "",
+		"story_title": "House vote keeps federal \"kill switch\" vehicle mandate",
+		"comment_text": "I do! I call it my “driveway.”<p>Related: 20 days until the Daytona 500!",
+		"context_keyword": "daytona",
+		"context_string": "Daytona.io cloud development environment manager, standardized dev environments, devcontainer orchestration, AI sandbox for code execution",
+		"expected_relevant": false,
+		"match_reason": "Daytona 500 (NASCAR)"
+	},
+	{
+		"objectID": "46865733",
+		"title": "",
+		"story_title": "Ask HN: Who is hiring? (February 2026)",
+		"comment_text": "<i>Stellar Science</i> | Hybrid (USA) Albuquerque NM, Washington DC (Tysons VA), Dayton OH | Full time, interns&#x2F;co-ops | U.S. citizenship required | <a href=\"https:&#x2F;&#x2F;www.stellarscience.com\" rel=\"nofollow\">https:&#x2F;&#x2F;www.stellarscience.com</a><p><i>Company</i>: We&#x27;re a small scientific software development company that develops custom scientific and engineering analysis applications in domains including: space situational awareness (monitoring the locations, health and status of on-orbit satellites), image simulation, high power microwave systems, modeling and simulation, laser systems modeling, AI&#x2F;ML including physics-informed neural networks (PINN), human body thermoregulation, computer vision and image processing, high performance computing (HPC), computer aided design (CAD), and more. All exciting applications and no CRUD. We emphasize high quality code and lightweight processes that free software engineers to be productive.<p><i>Experience</i>: Except for interns, we currently require a Bachelors degree in physics, engineering, math, computer science, or a related field. Masters or PhD is a plus. (Roughly 25% of our staff have PhDs.)<p><i>Technologies</i>: Lots of C++23, Qt 6.9, CMake, git, OpenGL, CUDA, Boost, Jenkins. Windows and Linux, msvc&#x2F;gcc&#x2F;clang&#x2F;clangcl. AI&#x2F;ML and analysis projects use Python and C++. Web projects use Java and Typescript&#x2F;React.<p><i>Apply online</i>: at <a href=\"https:&#x2F;&#x2F;www.stellarscience.com&#x2F;careers&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.stellarscience.com&#x2F;careers&#x2F;</a>.",
+		"context_keyword": "daytona",
+		"context_string": "Daytona.io cloud development environment manager, standardized dev environments, devcontainer orchestration, AI sandbox for code execution",
+		"expected_relevant": false,
+		"match_reason": "Dayton OH (city in job posting)"
+	},
+	{
+		"objectID": "43184240",
+		"title": "Replicating Cursor's Agent Mode with E2B and AgentKit",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "e2b",
+		"expected_relevant": true,
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "44784059",
+		"title": "Show HN: AI Sandbox with Kata, Firecracker, Cloud HV (E2B, Daytona Alternative)",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "e2b",
+		"expected_relevant": true,
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "41860413",
+		"title": "E2B – Run AI-Generated code in secure sandbox",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "e2b",
+		"expected_relevant": true,
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46795584",
+		"title": "Show HN: Sandbox Agent SDK – unified API for automating coding agents",
+		"story_title": "",
+		"comment_text": "We’ve been working with automating coding agents in sandboxes as of late. It’s bewildering how poorly standardized and difficult to use each agent varies between each other.<p>We open-sourced the Sandbox Agent SDK based on tools we built internally to solve 3 problems:<p>1. Universal agent API: interact with any coding agent using the same API<p>2. Running agents inside the sandbox: Agent Sandbox provides a Rust binary that serves the universal agent API over HTTP, instead of having to futz with undocumented interfaces<p>3. Universal session schema: persisting sessions is always problematic, since we don’t want the source of truth for the conversation to live inside the container in a schema we don’t control<p>Agent Sandbox SDK has:<p>- Any coding agent: Universal API to interact with all agents with full feature coverage<p>- Server or SDK mode: Run as an HTTP server or with the TypeScript SDK<p>- Universal session schema: Universal schema to store agent transcripts<p>- Supports your s",
+		"context_keyword": "e2b",
+		"expected_relevant": true,
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46832620",
+		"title": "Show HN: Open Sandbox – an open-source self-hostable Linux sandbox for AI agents",
+		"story_title": "",
+		"comment_text": "Hi HN, today we&#x27;re launching Open Sandbox, an open-source, self-hostable Linux sandbox written in Rust. It runs commands in isolated environments using process level sandboxing rather than micro VMs.<p>AI agents and LLMs generate code, but you can&#x27;t just exec() untrusted code on your machine. You need a sandbox, an isolated environment where that code runs without access to your hostsystem&#x2F;data.<p>The idea came from a conversation between my co-founders and me about slow startup times in Firecracker&#x2F;micro-VM-based sandboxes. He mentioned that during his PhD in the UK, he&#x27;d used process-level sandboxes in competitive programming, and they were fast. That sent us down a rabbit hole.<p>We looked at existing implementations of sandboxes with process level isolation like Isolate, Minijail,  nsjail and found that process-level sandboxes have very low resource overhead and surprisingly fast startup times. So we built our own in Rust.<p>How this compares to E2B, Modal ",
+		"context_keyword": "e2b",
+		"expected_relevant": true,
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46959191",
+		"title": "",
+		"story_title": "",
+		"comment_text": "sorry - what do you mean by embeddings in your last sentence?",
+		"context_keyword": "e2b",
+		"expected_relevant": false,
+		"match_reason": "emb(eddings)",
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46958861",
+		"title": "",
+		"story_title": "",
+		"comment_text": "&gt; and the only embarrassing image<p>Embarrassing image? I&#x27;m white, why would I be embarrassed over that image? It&#x27;s a computer generated image with no real people in it, how could it be embarrassing for alive humans?",
+		"context_keyword": "e2b",
+		"expected_relevant": false,
+		"match_reason": "emb(arrassing)",
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46958801",
+		"title": "",
+		"story_title": "",
+		"comment_text": "&gt; Imagine a Matrix client […] e2ee […]<p>The biggest immediate win that we can achieve for our users is to remove all (!) technical jargon from our landing pages and product ui.<p>This is a problem throughout all FOSS. For example in KDE:<p>&gt; Do x when Plasma starts.<p>Wtf do I care what Plasma is. Oh, you mean my computer? Yeah makes sense.<p>Raycast: You can search files, have a calculator, a translator…<p>KRunner: You can run terminal commands and convert characters to hexadecimal.<p>It is so obvious that these products are designed by developers for developers. From my experience, this friction is <i>everything</i>. You cannot expect people to intuitively figure it out.",
+		"context_keyword": "e2b",
+		"expected_relevant": false,
+		"match_reason": "E2E(e)",
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46958693",
+		"title": "",
+		"story_title": "",
+		"comment_text": "That&#x27;s fair, but arguable. At this stage I think the architecture and it&#x27;s reason to be are now so deeply intertwined that you cannot separate them (or would ruin it with the attempt).<p>I&#x27;ve seen instances where a building is all about what takes place there, demolished, re-built, and lose their soul and former purpose.<p>I can easily see that happening with the Southbank. It&#x27;s iconic and embedded so deeply at this stage, despite the the various opinions on its looks.",
+		"context_keyword": "e2b",
+		"expected_relevant": false,
+		"match_reason": "emb(edded)",
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46958232",
+		"title": "",
+		"story_title": "",
+		"comment_text": "&gt; It&#x27;s trivial to add a matrix to account for neutrino masses<p>The matrix you are thinking of is presumably the PMNS matrix [1]. It&#x27;s equivalent to the CKM matrix for quarks [2]. The purpose of both is to parametrize the mismatch between flavor [3] and mass eigenstates, not &quot;to account for neutrino masses&quot; or &quot;explain their origin&quot;.<p>As far as the standard model is concerned, neutrino masses and quark masses all originate from Yukawa couplings [4] with the Higgs field. Adding such terms to Weinberg&#x27;s original model of leptons is very much a trivial exercise, and was done already well before there was solid evidence for non-zero neutrino masses.<p>&gt; it&#x27;s possible experiments will say &quot;Both the current ideas are wrong.&quot;<p>Assuming that by &quot;Both current ideas&quot; you mean Dirac vs Majorana mass, those are the only available relativistic invariants. For both to be wrong, special relativity would have to be wrong. Hopefully I ",
+		"context_keyword": "e2b",
+		"expected_relevant": false,
+		"match_reason": "URL-encoded %E2%80%",
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46958126",
+		"title": "",
+		"story_title": "",
+		"comment_text": "Hopefully it will be like an Ebola virus, so that everyone will see how deadly it is instead of like smoking where you die of cancer 40 years down the line.",
+		"context_keyword": "e2b",
+		"expected_relevant": false,
+		"match_reason": "Eb(ola)",
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46957445",
+		"title": "",
+		"story_title": "",
+		"comment_text": "Strange article. Blanket statement that most Indians don&#x27;t read since English books are not sold in large numbers. The &#x27;Jaipur book festival&#x27; that the article refers to published the following stats..<p><i>Indian languages together accounted for roughly ~80% of titles published, with English making up a smaller share.</i><p><i>The Indian publishing industry is one of the most prominent publishing industries across the globe. Indian publishing industry at the second spot in the world (English publications) with approximately 19,000 publishing houses across the country publishing approximately 90,000 titles per year according to 2020-21 stats (Mallaya, 2016).</i><p><i>The EIBF International Bookselling Markets Report 2023 (EIBF Report, 2024) affirms that India is the sixth-largest book market in the world, and currently the second-largest market for books in English, right behind the United States. It also figures India’s current growth rate at 7%.</i><p><a href=\"https:&#x",
+		"context_keyword": "e2b",
+		"expected_relevant": false,
+		"match_reason": "EIB(F)",
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "46959374",
+		"title": "",
+		"story_title": "",
+		"comment_text": "Not OP. But embeddings are the internal matrix representations of tokens that LLMs use to do their work. If tokens are the native language that humans use, embeddings are the native language that LLMs use.<p>OP, I think, is saying that once LLMs start communicating natively without tokens is when they shed the need for humans or human-level communication.<p>Not sure I 100% agree, because embeddings from one LLM are not (currently) understood by another LLM and tokens provide a convenient translation layer. But I think there&#x27;s some grain of truth to what they&#x27;re saying.",
+		"context_keyword": "e2b",
+		"expected_relevant": false,
+		"match_reason": "emb(eddings) with AI vocabulary",
+		"context_string": "E2B.dev cloud sandbox for AI code execution, AI agent sandboxes, LLM code interpreter infrastructure"
+	},
+	{
+		"objectID": "44106520",
+		"title": "",
+		"story_title": "Agent sandbox: safe, persistent cloud environments for agents",
+		"comment_text": "finally a good alternative to e2b. Minor nit - it would be good to also have a screenshot in the docs on how to inspect what agent is working on or how to debug if its stuck",
+		"context_keyword": "e2b alternative",
+		"context_string": "Alternatives to E2B.dev for AI code execution sandboxes, competing sandbox platforms for AI agents",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "45666827",
+		"title": "",
+		"story_title": "Show HN: Katakate – Dozens of VMs per node for safe code exec",
+		"comment_text": "Thanks! I&#x27;ll review Arrakis and come back. E2B is often considered harder to setup and less AI engineers friendly for direct stack contributions, as Katakate is the only alternative fully implemented in Python (core modules, Typer CLI, FastAPI, Python SDK).<p>Our native K8s support and exposition of K8s API also makes it friendly to devops.<p>Finally, our deploy&#x2F;infra stack is lean and tightly fits in a single Ansible playbook, which makes it easy to understand and contribute to, letting you rapidly gain full understanding and ownership of the stack.",
+		"context_keyword": "e2b alternative",
+		"context_string": "Alternatives to E2B.dev for AI code execution sandboxes, competing sandbox platforms for AI agents",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "32767784",
+		"title": "Attacking Firecracker: AWS' MicroVM Monitor Written in Rust",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "firecracker microvm",
+		"context_string": "Firecracker microVM for lightweight sandboxing, AWS Firecracker virtualization for secure code execution",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "28893884",
+		"title": "Firecracker MicroVMs",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "firecracker microvm",
+		"context_string": "Firecracker microVM for lightweight sandboxing, AWS Firecracker virtualization for secure code execution",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "46343898",
+		"title": "Show HN: CodeGate – Firecracker-based Sandbox for AI Agent pip installs",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "firecracker microvm",
+		"context_string": "Firecracker microVM for lightweight sandboxing, AWS Firecracker virtualization for secure code execution",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "43184686",
+		"title": "ForeverVM: Run AI-generated code in stateful sandboxes that run forever",
+		"story_title": "",
+		"comment_text": "Hey HN! We started Jamsocket a few years ago as a way to run ephemeral servers that last for as long as a WebSocket connection. We sandboxed those servers, so with the rise of LLMs we started to see people use them for arbitrary code execution.<p>While this works, it was clunkier than what we would have wanted in a first-principles code execution product. We built ForeverVM from scratch to be that product.<p>In particular, it felt clunky for app developers to have to think about sandboxes starting and stopping, so the core tenet of ForeverVM is using memory snapshotting to create the abstraction of a Python REPL that lives forever.<p>When you go on our site, you are given a live Python repl, try it out!<p>---<p>Edit: here&#x27;s a bit more about why&#x2F;when&#x2F;how this can be used:<p>LLMs are often given extra abilities through &quot;tools&quot;, which are generally wrappers around API calls. For a lot of tasks (sending an email, fetching data from well-known sources), the LLM know",
+		"context_keyword": "forevervm",
+		"expected_relevant": true,
+		"context_string": "ForeverVM stateful persistent sandboxes for AI-generated code, Jamsocket, cloud code execution platform"
+	},
+	{
+		"objectID": "43188358",
+		"title": "",
+		"story_title": "",
+		"comment_text": "We allow outgoing requests because a common use case of ForeverVM is making API calls or fetching data files (the &quot;fetch and analyze data&quot; button shows an example of this).<p>We give every repl its own network namespace and virtual ethernet device. We also apply a set of firewall rules to lock it out from making non-public-internet requests.",
+		"context_keyword": "forevervm",
+		"expected_relevant": true,
+		"context_string": "ForeverVM stateful persistent sandboxes for AI-generated code, Jamsocket, cloud code execution platform"
+	},
+	{
+		"objectID": "46956951",
+		"title": "",
+		"story_title": "",
+		"comment_text": "I don&#x27;t care what people say. I love brutalist architecture. I love the exposed concrete forms. I love the giant concrete turkey in Toronto and plan to one day visit the UK to see the Barbican.<p>Concrete is strong and imposing and emotional. It feels authoritative and cold. A warm building feels like it has deliberately undermined its own status to feel welcoming and feels fake. A brutalist building doesn&#x27;t lie. It is a massive concrete edifice containing a large space within.<p>It also weathers in distinctive ways. The water stains are like seniority, telling me the building has and will last forever. A big glass skyscraper feels replaceable and new, like it&#x27;s disposable and will be replaced in a few years.<p>I get a lot of hate for this but one of the benefits of a concrete house is the ability to throw stones.",
+		"context_keyword": "forevervm",
+		"expected_relevant": false,
+		"match_reason": "forever",
+		"context_string": "ForeverVM stateful persistent sandboxes for AI-generated code, Jamsocket, cloud code execution platform"
+	},
+	{
+		"objectID": "46955699",
+		"title": "",
+		"story_title": "",
+		"comment_text": "Ironically, Signal actually ranks a -1 for privacy in this use. \nPresumably you&#x27;re already using Signal and getting mainstream contacts to start using it too. You probably have a basic profile that at least includes your real name, and might also have your picture. Maybe you&#x27;re even one of the 7 people in the world that use the Stories feature in it. Well good news, now all of that is also unconditionally available to anyone in any group you ever join, including any future changes you ever make to that info, unrevocably forever into the future.<p>Signal has a fun dark pattern where it unrevocably grants permissions for anyone you allow to contact you to see everything in your profile for the rest of time. It has only a single trust level with contacts effectively: full trust.  \nThis is unacceptable in any tool you use for online community, unless you exclusively use it for online community and can decline to provide any info in this full-trust level. Unfortunately Signal also",
+		"context_keyword": "forevervm",
+		"expected_relevant": false,
+		"match_reason": "forever",
+		"context_string": "ForeverVM stateful persistent sandboxes for AI-generated code, Jamsocket, cloud code execution platform"
+	},
+	{
+		"objectID": "42782824",
+		"title": "Modal Launches Sandboxes",
+		"story_title": "",
+		"comment_text": "",
+		"context_keyword": "modal sandbox",
+		"context_string": "Modal.com cloud compute platform for AI sandbox workloads, serverless GPU, Modal Labs sandboxed code execution",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "46582934",
+		"title": "",
+		"story_title": "FUSE is All You Need – Giving agents access to anything via filesystems",
+		"comment_text": "I recently had a question about what AI sandboxes use and I think Modal uses gvisor under the hood and I think others use firecracker&#x2F;generally favour it as well<p>Firecracker kind of ends up being in the VM categories and I would place gvisor in a similar category too under the VM<p>So in my opinion, VM&#x27;s are sandboxes.<p>Of course there is also libriscv <a href=\"https:&#x2F;&#x2F;github.com&#x2F;libriscv&#x2F;libriscv\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;libriscv&#x2F;libriscv</a> which is a sandbox (The fastest RISC-V sandbox)<p>There is also <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Zouuup&#x2F;landrun\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;Zouuup&#x2F;landrun</a>  Run any Linux process in a secure, unprivileged sandbox using Landlock. Think firejail, but lightweight, user-friendly, and baked into the kernel.<p>Your mileage may vary but I consider firecracker to be the AI sandbox usually. Othertimes it can be that they abstract on a cloud provider and open up servers in that or similar (I feel E2B does this on top of gcp)",
+		"context_keyword": "modal sandbox",
+		"context_string": "Modal.com cloud compute platform for AI sandbox workloads, serverless GPU, Modal Labs sandboxed code execution",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "46955143",
+		"title": "Show HN: Kore – Stack based language where compiler is the reward function",
+		"story_title": "",
+		"comment_text": "I built a stack-based programming language in Rust with Cranelift JIT, SPIR-V GPU backend.<p>Kore has ~140 tokens and 142 opcodes. Programs are sequences of stack operations — push values, apply functions, compose by concatenation. There&#x27;s a proof checker that statically verifies stack effects and a capability system that gates side effects.<p>How I got here: I wanted to explore whether a compiler could serve as the reward function for training an LLM to write code. Most code-gen benchmarks use test suites or human eval. But if the compiler can verify correctness before execution — accept or reject in microseconds — you don&#x27;t need a test harness at all.<p>That meant I needed two things: a language small enough for an LLM to learn the full vocabulary, and a security model that makes generated programs safe by construction.<p>The security model (P4: capabilities attenuate): Every side effect in Kore is gated by a capability — io for print&#x2F;rand, fs for file access, exec for",
+		"context_keyword": "modal sandbox",
+		"expected_relevant": false,
+		"match_reason": "fuzzy match",
+		"context_string": "Modal.com cloud compute platform for AI sandbox workloads, serverless GPU, Modal Labs sandboxed code execution"
+	},
+	{
+		"objectID": "46933255",
+		"title": "",
+		"story_title": "DoNotNotify is now Open Source",
+		"comment_text": "You&#x27;re right - the app sandbox model in iOS prevents inter-app communication of notifications, and there is no iOS equivalent to the Android ListenerNotificationService API.",
+		"context_keyword": "modal sandbox",
+		"context_string": "Modal.com cloud compute platform for AI sandbox workloads, serverless GPU, Modal Labs sandboxed code execution",
+		"expected_relevant": false,
+		"match_reason": "iOS app sandbox, not Modal.com"
+	},
+	{
+		"objectID": "46948630",
+		"title": "",
+		"story_title": "Show HN: Nix-sandbox-MCP: Reproducible, isolated code execution for Claude/LLMs",
+		"comment_text": "Built this because I wanted Claude Code to run untrusted snippets without touching my system, but Docker felt heavy. Uses jail.nix (bubblewrap) for isolation. Currently supports Python, Node, Bash with persistent REPL sessions.\nWould love feedback on the interface design.",
+		"context_keyword": "run untrusted code",
+		"context_string": "Running untrusted AI-generated code safely in sandboxes, secure code execution for LLM agents",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "46877569",
+		"title": "",
+		"story_title": "Deno Sandbox",
+		"comment_text": "we aren’t worried about that.<p>when we were starting out we figured there was no solution that would satisfy our requirements for running untrusted code. so we had to build our own.<p>the reason we open-sourced this is because we want everyone to be able to run our Sandboxes - in contrast to the majority of our competitors who’s goal is to lock you in to their offering.<p>with open-source you have the choice, and luckily Manus, Perplexity, Nvidia choose us for their workloads.<p>(opinions my own)",
+		"context_keyword": "run untrusted code",
+		"context_string": "Running untrusted AI-generated code safely in sandboxes, secure code execution for LLM agents",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "46885478",
+		"title": "",
+		"story_title": "Notepad++ supply chain attack breakdown",
+		"comment_text": "&gt; developers and users increasingly trust code they haven&#x27;t personally reviewed.<p>This has been true since we left the era where you typed the program in each time you ran it. Ken Thompson rather famously wrote about this four decades ago: <a href=\"https:&#x2F;&#x2F;www.cs.umass.edu&#x2F;~emery&#x2F;classes&#x2F;cmpsci691st&#x2F;readings&#x2F;Sec&#x2F;Reflections-on-Trusting-Trust.pdf\" rel=\"nofollow\">https:&#x2F;&#x2F;www.cs.umass.edu&#x2F;~emery&#x2F;classes&#x2F;cmpsci691st&#x2F;readings...</a><p>Sandboxing certainly helps but it’s not a panacea: for example, Notepad++ is exactly the kind of utility people would grant access to edit system files and they would have trusted the updater, too.",
+		"context_keyword": "run untrusted code",
+		"context_string": "Running untrusted AI-generated code safely in sandboxes, secure code execution for LLM agents",
+		"expected_relevant": false,
+		"match_reason": "supply chain attack, not sandbox"
+	},
+	{
+		"objectID": "46691072",
+		"title": "",
+		"story_title": "Run untrusted code in VMs on Mac/Linux – 1-2ms warm start, domain filtering",
+		"comment_text": "I built exec-sandbox because I wanted VM-level isolation for AI-generated code on my Mac without running Linux in a VM first.<p>Most sandboxes (E2B, Hopx) use <a href=\"https:&#x2F;&#x2F;firecracker-microvm.github.io&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;firecracker-microvm.github.io&#x2F;</a>, on macOS, you need nested virtualization. exec-sandbox uses QEMU with Apple&#x27;s Hypervisor.framework (HVF) and runs natively on macOS, including Apple Silicon.<p>What makes it different:<p>- Native macOS + Linux, no Docker, no nested VMs, just brew install qemu<p>- 1-2ms warm start, pre-started VM pool beats E2B&#x27;s 150ms cold start<p>- Port forwarding without network, expose localhost:8080 while blocking all outbound (DNS + IP)<p>- Domain allowlisting, allowed_domains=[&quot;api.github.com&quot;] for granular control<p>- CLI for automation, sbx run *.py -j 10 --json with concurrency control<p>- Package validation, blocks typosquatting against PyPI&#x2F;npm top 10k<p>- Self-hosted, no session limits, unlike E2B&#x27;s 24-hour cap<p>7-layer security: hardware virtualization, unprivileged QEMU, seccomp, cgroups v2, namespaces, AppArmor&#x2F;SELinux, socket authentication.<p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;dualeai&#x2F;exec-sandbox\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;dualeai&#x2F;exec-sandbox</a>",
+		"context_keyword": "sandbox 24 hour",
+		"context_string": "AI sandbox session limits, code execution timeout restrictions, sandbox time limitations for AI agents and LLMs",
+		"expected_relevant": true
+	},
+	{
+		"objectID": "22161664",
+		"title": "",
+		"story_title": "“My wife has complained that OpenOffice will never print on Tuesdays” (2009)",
+		"comment_text": "My most recent one was that 3 minutes after someone else would SSH into my workstation, my X11 session would crash, but when <i>I</i> would SSH into my workstation, there was no error.<p>It turns out the default configuration for systemd-logind is to sandbox it away from networking; it&#x27;s an NIS setup where I am, but I had a local passwd entry for myself so that my home directory would be local.  There was a 3 minute timeout on something NIS related, which would cause an error.  Then systemd-logind would restart system-wide, including my local login.",
+		"context_keyword": "sandbox 24 hour",
+		"context_string": "AI sandbox session limits, code execution timeout restrictions, sandbox time limitations for AI agents and LLMs",
+		"expected_relevant": false,
+		"match_reason": "24 hour unrelated (OpenOffice)"
+	}
+]

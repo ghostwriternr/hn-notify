@@ -32,7 +32,7 @@ const NOTIFIED_PREFIX = "notified:";
 const NOTIFIED_TTL_SECONDS = 24 * 60 * 60;
 
 // AI Configuration
-const RELEVANCE_THRESHOLD = 0.01; // Minimum score to send notification (0-1), tuned via reranker testing
+export const RELEVANCE_THRESHOLD = 0.01;
 
 // HN Algolia API
 const HN_API_BASE = "https://hn.algolia.com/api/v1";
